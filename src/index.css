@@ -1,13 +1,113 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+    --green: #7fa;
+    --black: #000;
+    --light: #fff;
+    --darkgray: #444;
+    --lightgray: #aaa;
+    --blue: #55f;
+    --red: #f33;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: var(--lightgray);
+}
+
+.App {
+    display: flex;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    color: var(--light);
+    padding: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.credits {
+    color: var(--light);
+    padding: 0 0 5px 10px;
+    font-size: 12px;
+}
+
+.calculator {
+    background: var(--black);
+    padding: 15px;
+    border-radius: 10px 10px 15px 15px;
+    overflow: hidden;
+    max-width: 100%;
+    width: 400px;
+}
+
+.screen {
+    background: var(--green);
+    text-align: right;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.screen>div {
+    font-size: 35px;
+}
+
+.screen>span {
+    font-size: 17px;
+    color: var(--darkgray);
+}
+
+button {
+    background: var(--darkgray);
+    color: var(--light);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 300;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: var(--light);
+}
+
+.operators {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.operators button {
+    flex: 1 1 0%;
+    background: var(--blue);
+}
+
+.operators>.delete {
+    background: var(--red);
+}
+
+.operators>.reset {
+    background: var(--red);
+}
+
+.digits {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.digits button {
+    flex: 1 1 33.33%;
 }
